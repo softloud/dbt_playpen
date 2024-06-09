@@ -1,0 +1,9 @@
+
+target/
+dbt_packages/
+logs/
+jaffle-data/*
+retention/logs/
+playpen/logs/
+retention-data/
+venv/

@@ -1,7 +1,14 @@
+1. Install postgres
+
+```bash
+sudo -u postgres createuser --interactive --pwprompt
+```
+
 1. Create a PostgreSQL superuser: After installing PostgreSQL, create a superuser. This user has all privileges and can perform any administrative task on the PostgreSQL server. Use the following command:
-    ```bash
-    sudo -u postgres createuser --interactive --pwprompt
-    ```
+
+```bash
+sudo -u postgres createuser --interactive --pwprompt
+```
 
 2. Create a database
 
@@ -21,7 +28,7 @@ CREATE DATABASE mydb;
 3. Check the database: To make sure the database was created successfully, list all databases with the following command:
     ```bash
     # List all databases
-    sudo -u postgres psql -c "\l"
+    \l
     ```
 
     If `playpen_db` is in the list, it means the database was created successfully.

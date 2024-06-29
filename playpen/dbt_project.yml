@@ -6,7 +6,7 @@ name: 'playpen'
 version: '1.0.0'
 
 # This setting configures which "profile" dbt uses for this project.
-profile: 'playpen'
+profile: 'dbt_playpen_profile'
 
 # These configurations specify where dbt should look for different types of files.
 # The `model-paths` config, for example, states that models in this project can be
@@ -33,4 +33,6 @@ models:
   playpen:
     # Config indicated by + and applies to all files under models/example/
     staging:
-      +materialized: table # because the data is not being updated
+      +materialized: view # because the data is not being updated
+    marts:
+      +materialized: table

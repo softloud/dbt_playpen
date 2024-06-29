@@ -1,12 +1,16 @@
 version: 2
 
 sources:
-  - name: public
+  - name: jaffle_shop
+    schema: raw_jaffle_shop
     tables:
-      - name: raw_customers
-      - name: raw_orders
-      - name: raw_items
-      - name: raw_products
-      - name: raw_stores
-      - name: raw_supplies
-      - name: raw_tweets
+      - name: customers
+      - name: orders
+        loaded_at_field: _etl_loaded_at
+        freshness:
+          warn_after: {count: 4, period: week}
+          error_after: {count: 6, period: week}
+  - name: stripe
+    schema: raw_stripe
+    tables:
+      - name: payment

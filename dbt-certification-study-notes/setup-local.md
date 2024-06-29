@@ -45,9 +45,7 @@ SELECT rolname FROM pg_roles WHERE rolname NOT LIKE 'pg_%' AND rolname != 'postg
 I want to separate the raw data from the developer database and the production output so everything is neat and tidy. 
 
 ```sql
-create database learndbt_raw;
-create database learndbt_dev;
-create database learndbt_prod;
+create database playpen_db;
 ```
 
 Inspect the databases with `\l`.
@@ -62,4 +60,6 @@ Replace `<developer>` and `<password>` accordingly.
 
 ```sql
 CREATE ROLE <developer> LOGIN PASSWORD '<password>' NOSUPERUSER NOCREATEDB NOCREATEROLE;
+
 ```
+

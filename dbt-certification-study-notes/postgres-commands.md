@@ -1,10 +1,12 @@
 # Frequently used postgresql commands
 
+## 
+
 
 ## Connect to raw database.
 
 ```shell
-psql -U cantabile -d learndbt_raw
+psql -U cantabile -d playpen_db
 ```
 
 ## Create a database

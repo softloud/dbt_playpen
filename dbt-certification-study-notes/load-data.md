@@ -13,7 +13,7 @@ Now I need to load data into these databases.
 Connect as cantabile, my superuser, to the raw database.
 
 ```
-psql -U cantabile -d learndbt_raw
+psql -U cantabile -d playpen_db
 ```
 
 ## Create schema
@@ -104,7 +104,7 @@ file_format = (
 Connect to raw database.
 
 ```shell
-psql -U cantabile -d learndbt_raw
+psql -U cantabile -d playpen_db
 ```
 
 #### Create the rest of the tables
@@ -163,5 +163,13 @@ select * from jaffle_shop.orders limit 5;
 -- check payments
 select * from stripe.payment limit 5;
 
+
+```
+
+But I really should call these raw. 
+
+```sql
+ALTER SCHEMA jaffle_shop RENAME TO raw_jaffle_shop;
+ALTER SCHEMA stripe RENAME TO raw_stripe;
 
 ```

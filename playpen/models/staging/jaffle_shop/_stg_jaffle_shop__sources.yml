@@ -1,0 +1,13 @@
+version: 2
+
+sources:
+  - name: jaffle_shop
+    schema: raw_jaffle_shop
+    tables:
+      - name: customers
+      - name: orders
+        description: Set to warn after a month, and error after two months, committing to doing certification.
+        loaded_at_field: _etl_loaded_at
+        freshness:
+          warn_after: {count: 30, period: day}
+          error_after: {count: 60, period: day}
